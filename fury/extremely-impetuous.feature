@@ -14,7 +14,7 @@ Scenario: Given that 'Fusilier Angus' declares the Short Skill 'BS Attack'
           And the target is 'Zamira Nazarova' 15 inches away
           And the 'Zamira Nazarova' is in Partial Cover
           When the Attack is calulated
-          Then there is no penalty applied for Partial Cover
+          Then there is no BS penalty applied for Partial Cover
 
 # Being Extremely Impetuous gives the
 # trooper an Impetuous Order. This Impetuous Order is generated in addition to
