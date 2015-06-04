@@ -53,7 +53,7 @@ Scenario: A trooper with Frenzy who causes an enemy to lose one or more points f
   And the 'Myrmidon' is in Partial Cover
   And the 'Myrmidon' caused 1 Wound in the Game Round 1
   When checking if the 'Myrmidon' is Impetuous and cannot claim Partial Cover
-  Then the 'Myrmidon' is Non-Impetuous.
+  Then the 'Myrmidon' is 'Non Impetuous'.
 
 @aro
 @tactical-phase
