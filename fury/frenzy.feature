@@ -49,9 +49,9 @@ Scenario: A trooper with Frenzy who causes an enemy to lose one or more points f
   Then the 'Domaru Butai' should be 'Impetuous'
 
 Scenario: A trooper with Frenzy who causes an enemy to lose one or more points from their Wounds Attribute will not become Impetuous until the start of the player's Active Turn
-  Given that the Active Player shoots at an enemy 'Myrmidon'
+  Given that the Active Player shoots at an enemy 'Myrmidon' in Player Turn 1 of Game Round 2
   And the 'Myrmidon' is in Partial Cover
-  And the 'Myrmidon' caused 1 Wound in the previous Game Round
+  And the 'Myrmidon' caused 1 Wound in the Game Round 1
   When checking if the 'Myrmidon' is Impetuous and cannot claim Partial Cover
   Then the 'Myrmidon' is Non-Impetuous.
 
