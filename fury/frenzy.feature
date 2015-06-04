@@ -28,29 +28,44 @@ Scenario: A trooper with Frenzy is deployed as Non Impetuous
   When 'Kornak Gazarot' is deployed
   Then 'Kornak Gazarot' should be 'Non Impetuous'
 
+@tactical-phase
 Scenario: A trooper with Frenzy is Non-Impetuous until they cause a Wound or STR damage
   Given that the Active Player has a 'Myrmidon'
-  When they complete the Order Count Phase
+  When the Tactical Phase begins
   Then the 'Myrmidon' should be 'Non Impetuous'
 
+@active-turn
 Scenario: A trooper with Frenzy who causes a Wound stays Non-Impetuous until the start of the owning player's next Active Turn.
   Given that the Active Player has 'Cadmus-Naish Agent Sheskiin'
   When 'Cadmus-Naish Agent Sheskiin' causes an enemy trooper 1 Wound
-  Then 'Cadmus-Naish Agent Sheskiin' should be 'Non Impetuous' for the remainder of this Player Turn
+  Then 'Cadmus-Naish Agent Sheskiin' should be 'Non Impetuous' for the remainder of this Game Round
 
-Scenario: A trooper with Frenzy who causes an enemy to lose one or more points from their Wounds Attribute prior to the Active Turn will become Impetuous
+@aro
+@tactical-phase
+Scenario: A trooper with Frenzy who causes an enemy to lose one or more points from their Wounds Attribute prior to the Active Turn will become Impetuous at the beginning of the player's Active Turn
   Given that the Active Player has a 'Domaru Butai'
   And the 'Domaru Butai' caused an enemy trooper 2 Wounds in ARO
-  When they complete the Order Count Phase
-  Then the 'Domaru Butai' should have an 'Impetuous' Order.
+  When the Tactical Phase begins
+  Then the 'Domaru Butai' should be 'Impetuous'
 
+Scenario: A trooper with Frenzy who causes an enemy to lose one or more points from their Wounds Attribute will not become Impetuous until the start of the player's Active Turn
+  Given that the Active Player shoots at an enemy 'Myrmidon'
+  And the 'Myrmidon' is in Partial Cover
+  And the 'Myrmidon' caused 1 Wound in the previous Game Round
+  When checking if the 'Myrmidon' is Impetuous and cannot claim Partial Cover
+  Then the 'Myrmidon' is Non-Impetuous.
+
+@aro
+@tactical-phase
 Scenario: A trooper with Frenzy who causes an enemy to lose one or more Wounds prior to the Active Turn will stay Impetuous for the rest of the game
   Given that it is Active Turn 3 and the Active Player has a 'Knight of Santiago'
   And the 'Knight of Santiago' caused an enemy trooper 1 Wound in ARO in Game Round 1
-  When they complete the Order Count Phase
-  Then the 'Knight of Santiago' should have an 'Impetuous' Order.
+  When the Tactical Phase begins
+  Then the 'Knight of Santiago' should be 'Impetuous'
 
+@tactical-phase
 Scenario: A trooper with Frenzy who causes an enemy remote to lose one or more STR Attribute prior to the Active Turn will become Impetuous
   Given that the Active Player has a 'Myrmidon'
-  When the 'Myrmidon' causes an enemy Remote to lose 1 STR
+  And the 'Myrmidon' caused an enemy Remote to lose 1 STR prior to the current Active Turn
+  When the Tactical Phase begins
   Then the 'Myrmidon' should be 'Impetuous'
