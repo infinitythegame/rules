@@ -15,6 +15,7 @@ Scenario: Rolling equal to an unmodified attribute is a Critical success
   When 'Fusilier Angus' rolls 12
   Then 'Fusilier Angus' should achieve a Critical Success
 
+@modifiers
 Scenario: Rolling equal to an modified attribute is a Critical success
   Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
   And that 'Fusilier Angus' has a 'BS' Attribute of 12
@@ -22,6 +23,7 @@ Scenario: Rolling equal to an modified attribute is a Critical success
   When 'Fusilier Angus' rolls 9
   Then 'Fusilier Angus' should achieve a Critical Success
 
+@modifiers
 Scenario: Rolling above a modified attribute does not achieve a Critical Success
   Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
   And that 'Fusilier Angus' has a 'BS' Attribute of 12
@@ -29,6 +31,7 @@ Scenario: Rolling above a modified attribute does not achieve a Critical Success
   When 'Fusilier Angus' rolls 12
   Then 'Fusilier Angus' should not achieve a Critical Success
 
+@modifiers
 Scenario: Rolling below a modified attribute does not achieve a Critical Success
   Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
   And that 'Fusilier Angus' has a 'BS' Attribute of 12
