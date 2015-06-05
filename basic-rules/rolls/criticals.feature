@@ -25,6 +25,13 @@ Scenario: Rolling equal to an modified attribute is a Critical success
 Scenario: Rolling above a modified attribute does not achieve a Critical Success
   Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
   And that 'Fusilier Angus' has a 'BS' Attribute of 12
-  And that the shot is at 'Long Range' (-3 MOD)
+  And that the shot is at 'Long' Range (-3 MOD)
+  When 'Fusilier Angus' rolls 12
+  Then 'Fusilier Angus' should not achieve a Critical Success
+
+Scenario: Rolling below a modified attribute does not achieve a Critical Success
+  Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
+  And that 'Fusilier Angus' has a 'BS' Attribute of 12
+  And that the shot is at 'Medium' Range (+3 MOD)
   When 'Fusilier Angus' rolls 12
   Then 'Fusilier Angus' should not achieve a Critical Success
