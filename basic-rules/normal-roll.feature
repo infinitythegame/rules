@@ -1,7 +1,7 @@
 @basic-rules
 @rolls
 @normal-roll
-Feature:
+Feature: Rules for Normal rolls
   Normal Rolls are the most common, basic dice rolls in Infinity.
   This roll is used when a troop is not facing off against an
   enemy, but instead must prove successful in an uncontested
