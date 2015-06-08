@@ -1,3 +1,4 @@
+@rulebook:n3
 @basic-rules
 @rolls
 @criticals
@@ -15,5 +16,5 @@ Feature: Attributes above 20 provide more chance of a critical
 
 Scenario: Any result equal to or above 20 is a Critical
   Given that 'Miyamoto Mushashi' has a Close Combat (CC) Attribute of 25
-  When 'Miyamoto Mushashi' rolls a 20
+  When 'Miyamoto Mushashi' rolls 18
   Then 'Miyamoto Mushashi' achieves a Critical Success
