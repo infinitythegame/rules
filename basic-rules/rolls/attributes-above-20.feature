@@ -1,5 +1,5 @@
-@rulebook:n3
-@basic-rules
+@source:N3
+@section:basic-rules
 @rolls
 @criticals
 Feature: Attributes above 20 provide more chance of a critical

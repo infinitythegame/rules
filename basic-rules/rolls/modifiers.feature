@@ -1,5 +1,5 @@
-@rulebook:n3
-@basic-rules
+@source:N3
+@section:basic-rules
 @rolls
 @modifiers
 Feature: Modify attributes based on external factors

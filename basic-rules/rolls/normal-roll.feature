@@ -1,5 +1,5 @@
-@rulebook:n3
-@basic-rules
+@source:N3
+@section:basic-rules
 @rolls
 @normal-roll
 Feature: Rules for Normal rolls
