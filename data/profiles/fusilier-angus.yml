@@ -1,0 +1,21 @@
+---
+name: Fusilier Angus
+training: Regular
+fury: Non Impetuous
+attributes:
+  mov:
+    first: 4
+    second: 4
+  bs:  12
+  cc:  13
+  ph:  10
+  wip: 12
+  arm: 1
+  bts: 0
+  w:   1
+  s:   2
+ava: Total
+backup: cube
+  
+
+...
