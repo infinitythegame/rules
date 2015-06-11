@@ -1,5 +1,6 @@
 @source:N3
 @section:basic-rules
+@page:20
 @rolls
 @criticals
 Feature: Rolls that exactly match a modified attribute are criticals

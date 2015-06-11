@@ -1,5 +1,6 @@
 @source:N3
 @section:basic-rules
+@page:20
 @rolls
 @normal-roll
 Feature: Rules for Normal rolls
