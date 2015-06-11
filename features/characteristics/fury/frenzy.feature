@@ -1,3 +1,5 @@
+@source:N3
+@section:characteristics-and-skills
 @fury
 Feature:
   FURY: FRENZY
