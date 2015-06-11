@@ -1,22 +1,19 @@
-# Rules:
-# Order count (p.27)
-# The Active Player counts how many Orders they have at their disposal
-# for this Turn, by counting the number, type and state of
-# their troops. They also applies the effects of Retreat! and/or Loss
-# of Lieutenant (if necessary).
-#
-# Regular Orders (p.27)
-# For each Regular troop deployed on the table that is not in a
-# Null state (Unconscious, Dead, Sepsitorized…), the Active Player
-# adds one Regular Order Marker (REGULAR) to his Order Pool.
-
+@source:N3
+@section:game-sequence
+@page:27
 @active-turn
 @tactical-phase
 @order-count
 Feature: Add all of the Regular Orders to the Order Pool of each Combat Group
-  As the Active Player
-  I want an accurate Order Pool counter for Combat Groups
-  In order to know how may Orders I have left.
+  Order count
+  The Active Player counts how many Orders they have at their disposal
+  for this Turn, by counting the number, type and state of
+  their troops. They also applies the effects of Retreat! and/or Loss
+  of Lieutenant (if necessary).
+  Regular Orders (p.27)
+  For each Regular troop deployed on the table that is not in a
+  Null state (Unconscious, Dead, Sepsitorized…), the Active Player
+  adds one Regular Order Marker (REGULAR) to his Order Pool.
 
 Scenario: Combat Group with 6 Regular Troopers
   Given I have a Combat Group with 6 Troopers with 'Regular Training'
