@@ -10,11 +10,12 @@ Feature:
   Cover MODs.
 
 @cover
-Scenario: Given that 'Fusilier Angus' declares the Short Skill 'BS Attack'
-          And the target is 'Zamira Nazarova' 15 inches away
-          And the 'Zamira Nazarova' is in Partial Cover
-          When the Attack is calulated
-          Then there is no BS penalty applied for Partial Cover
+Scenario: Impetuous Troops gain no benefit from Partial Cover
+  Given that 'Fusilier Angus' declares the Short Skill 'BS Attack'
+  And the target is 'Zamira Nazarova' 15 inches away
+  And the 'Zamira Nazarova' is in Partial Cover
+  When the BS Attack is calulated
+  Then there is no BS penalty applied for Partial Cover
 
 @fury
 Feature:
