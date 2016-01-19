@@ -77,11 +77,10 @@ Scenario: The sum total of the Modifiers applied to a Roll can never exceed -12
 @cover
 @bs-attack
 @visibility
-Scenario: The sum total of the Modifiers applied to a Roll can never exceed -12
-  Given that an 'Akal Commando' declares a BS Attack with his 'Combi Rifle' against a 'Spektr'
-  And the 'Spektr' has the Special Skill 'TO Camouflage' (-6 MOD)
-  And the 'Spektr' is in Partial Cover (-3 MOD)
-  And the 'Spektr' is at 'Maximum' Range (-6 MOD)
-  And the 'Spektr' is in the 'Targeted' State (+3 MOD)
-  And the attack must pass through a 'Poor Visibility Zone' (-6 MOD)
-  Then the total MOD should be -12
+Scenario: The sum total of the Modifiers applied to a Roll can never exceed +12
+  Given that a 'USARF Grunt' declares a BS Attack with her 'Sniper Rifle' against a 'Fusilier'
+  And the 'Fusilier' is in the 'Targeted' state (+3 MOD)
+  And the 'Fusilier' is at 'Medium' Range (+3 MOD)
+  And the 'USARF Grunt' is the 'Link Team Leader' of a Link Team of 5 (+3 MOD)
+  And the 'USARF Grunt' declares using the skill 'Marksmanship' level 'X' (+6 MOD)
+  Then the total MOD should be +12
