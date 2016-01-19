@@ -19,3 +19,8 @@ Scenario: Any result equal to or above 20 is a Critical
   Given that 'Miyamoto Mushashi' has a Close Combat (CC) Attribute of 25
   When 'Miyamoto Mushashi' rolls 18
   Then 'Miyamoto Mushashi' achieves a Critical Success
+
+Scenario: Add the value above 20 to the die roll
+  Given that 'Miyamoto Mushashi' has a Close Combat (CC) Attribute of 25
+  When 'Miyamoto Mushashi' rolls 12
+  Then 'Miyamoto Mushashi' has a result of 17
