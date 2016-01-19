@@ -18,9 +18,18 @@ Feature: Attributes above 20 provide more chance of a critical
 Scenario: Any result equal to or above 20 is a Critical
   Given that 'Miyamoto Mushashi' has a Close Combat (CC) Attribute of 25
   When 'Miyamoto Mushashi' rolls 18
-  Then 'Miyamoto Mushashi' achieves a Critical Success
+  Then 'Miyamoto Mushashi' will achieve a Critical Success
 
 Scenario: Add the value above 20 to the die roll
   Given that 'Miyamoto Mushashi' has a Close Combat (CC) Attribute of 25
   When 'Miyamoto Mushashi' rolls 12
-  Then 'Miyamoto Mushashi' has a result of 17
+  Then 'Miyamoto Mushashi' will have a result of 17
+
+Scenario: An attribute can be modified above 20
+  Given that a 'USARF Grunt' declares a BS Attack with her 'Sniper Rifle' against a 'Fusilier'
+  And the 'Fusilier' is in the 'Targeted' state (+3 MOD)
+  And the 'Fusilier' is at 'Medium' Range (+3 MOD)
+  And the 'USARF Grunt' is the 'Link Team Leader' of a Link Team of 5 (+3 MOD)
+  And the 'USARF Grunt' declares using the skill 'Marksmanship' level 'X' (+6 MOD)
+  When the 'USARF Grunt' rolls 16
+  Then the 'USARF Grunt' will have result of 19

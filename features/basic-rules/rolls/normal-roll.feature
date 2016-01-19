@@ -17,19 +17,19 @@ Feature: Rules for Normal rolls
   Attribute, the Skill is successful, and the troop achieves its goal.
 
 @scenario: Trooper rolls under their Attribute
-  Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
-  And that 'Fusilier Angus' has a 'BS' Attribute of 12
+  Given that 'Fusilier Angus' made a Normal 'BS' Roll
+  And that 'Fusilier Angus' had a 'BS' Attribute of 12
   When 'Fusilier Angus' rolls 8
-  Then 'Fusilier Angus' should pass the roll.
+  Then 'Fusilier Angus' will pass the roll.
 
 @scenario: Trooper rolls equal to their Attribute
-  Given that 'Fendetestas the Irmandinho' has to make a Normal 'WIP' Roll
-  And that 'Fendetestas the Irmandinho' has a 'WIP' Attribute of 13
+  Given that 'Fendetestas the Irmandinho' made a Normal 'WIP' Roll
+  And that 'Fendetestas the Irmandinho' had a 'WIP' Attribute of 13
   When 'Fendetestas the Irmandinho' rolls 13
-  Then 'Fendetestas the Irmandinho' should pass the roll.
+  Then 'Fendetestas the Irmandinho' will pass the roll.
 
 @scenario: Trooper rolls above their Attribute
-  Given that 'Fusilier Angus' has to make a Normal 'BS' Roll
-  And that 'Fusilier Angus' has a 'BS' Attribute of 12
+  Given that 'Fusilier Angus' made a Normal 'BS' Roll
+  And that 'Fusilier Angus' had a 'BS' Attribute of 12
   When 'Fusilier Angus' rolls 15
-  Then 'Fusilier Angus' fails the roll
+  Then 'Fusilier Angus' will fail the roll

@@ -11,7 +11,7 @@ Feature: Attributes Below 1
 
 Scenario: Unable to hit
   Given that I have a 'Probot'
-  And the 'Probot' declares 'BS Attack'
-  And that the MOD is -12
+  And the 'Probot' declared 'BS Attack'
+  And that the MOD was -12
   When the 'Probot' shoots
-  Then it is an Automatic Failure
+  Then it will be an Automatic Failure

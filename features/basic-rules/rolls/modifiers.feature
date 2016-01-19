@@ -29,25 +29,25 @@ Scenario: Range of a weapon may modify the BS Attribute negatively
   Given that an 'Akal Commando' declares a BS Attack with his 'Combi Rifle' against a 'Ghulam'
   And the 'Ghulam' is at 'Maximum' Range (-6 MOD)
   When the 'BS' Attribute of the 'Akal Commando' is calculated
-  Then the MOD should be -6
+  Then the MOD will be -6
 
 @range
 @bs-attack
 Scenario: Range of a weapon may modify the BS Attribute positively
-  Given that an 'Akal Commando' declares a BS Attack with his 'Combi Rifle' against a 'Ghulam'
-  And the 'Ghulam' is at 'Medium' Range (+3 MOD)
+  Given that an 'Akal Commando' declared a BS Attack with his 'Combi Rifle' against a 'Ghulam'
+  And the 'Ghulam' was at 'Medium' Range (+3 MOD)
   When the 'BS' Attribute of the 'Akal Commando' is calculated
-  Then the total MOD should be 3
+  Then the total MOD will be 3
 
 @range
 @cover
 @bs-attack
 Scenario: Modifiers to attributes stack
-  Given that an 'Akal Commando' declares a BS Attack with his 'Combi Rifle' against a 'Ghulam'
-  And the 'Ghulam' is at 'Long' Range (-3 MOD)
-  And the Ghulam is in Partial Cover (-3 MOD)
+  Given that an 'Akal Commando' declared a BS Attack with his 'Combi Rifle' against a 'Ghulam'
+  And the 'Ghulam' was at 'Long' Range (-3 MOD)
+  And the Ghulam was in Partial Cover (-3 MOD)
   When the 'BS' Attribute of the 'Akal Commando' is calculated
-  Then the total MOD should be -6
+  Then the total MOD will be -6
 
 @range
 @cover
@@ -55,32 +55,34 @@ Scenario: Modifiers to attributes stack
 @technical-weapon
 @targeted
 Scenario: Modifiers should be added together to return the sum of all of them
-  Given that a 'Ghulam Forward Observer' declares a BS Attack with her 'Flash Pulse' against 'Fusilier Angus'
-  And 'Fusilier Angus' is at 'Medium' Range (+3 MOD)
-  And 'Fusilier Angus' is in the 'Targeted' State (+3 MOD)
-  And 'Fusilier Angus' is in Partial Cover (-3 MOD)
-  And 'Fusilier Angus' is within a 'Low Visibility Zone' (-3 MOD)
+  Given that a 'Ghulam Forward Observer' declared a BS Attack with her 'Flash Pulse' against 'Fusilier Angus'
+  And 'Fusilier Angus' was at 'Medium' Range (+3 MOD)
+  And 'Fusilier Angus' was in the 'Targeted' State (+3 MOD)
+  And 'Fusilier Angus' was in Partial Cover (-3 MOD)
+  And 'Fusilier Angus' was within a 'Low Visibility Zone' (-3 MOD)
   When the 'WIP' Attribute of the 'Ghulam Forward Observer' is calculated
-  Then the total MOD should be 0
+  Then the total MOD will be 0
 
 @range
 @cover
 @bs-attack
 Scenario: The sum total of the Modifiers applied to a Roll can never exceed -12
-  Given that an 'Akal Commando' declares a BS Attack with his 'Combi Rifle' against a 'Spektr'
-  And the 'Spektr' has the Special Skill 'TO Camouflage' (-6 MOD)
-  And the 'Spektr' is in Partial Cover (-3 MOD)
-  And the 'Spektr' is at 'Maximum' Range (-6 MOD)
-  Then the total MOD should be -12
+  Given that an 'Akal Commando' declared a BS Attack with his 'Combi Rifle' against a 'Spektr'
+  And the 'Spektr' had the Special Skill 'TO Camouflage' (-6 MOD)
+  And the 'Spektr' was in Partial Cover (-3 MOD)
+  And the 'Spektr' was at 'Maximum' Range (-6 MOD)
+  When the Modifier for the Roll is calculated
+  Then the total MOD will be -12
 
 @range
 @cover
 @bs-attack
 @visibility
 Scenario: The sum total of the Modifiers applied to a Roll can never exceed +12
-  Given that a 'USARF Grunt' declares a BS Attack with her 'Sniper Rifle' against a 'Fusilier'
-  And the 'Fusilier' is in the 'Targeted' state (+3 MOD)
-  And the 'Fusilier' is at 'Medium' Range (+3 MOD)
-  And the 'USARF Grunt' is the 'Link Team Leader' of a Link Team of 5 (+3 MOD)
-  And the 'USARF Grunt' declares using the skill 'Marksmanship' level 'X' (+6 MOD)
-  Then the total MOD should be +12
+  Given that a 'USARF Grunt' declared a BS Attack with her 'Sniper Rifle' against a 'Fusilier'
+  And the 'Fusilier' was in the 'Targeted' state (+3 MOD)
+  And the 'Fusilier' was at 'Medium' Range (+3 MOD)
+  And the 'USARF Grunt' was the 'Link Team Leader' of a Link Team of 5 (+3 MOD)
+  And the 'USARF Grunt' declared using the skill 'Marksmanship' level 'X' (+6 MOD)
+  When the Modifier for the Roll is calculated
+  Then the total MOD will be +12

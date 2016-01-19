@@ -35,8 +35,8 @@ Feature: Opposing actions result in a Face-to-Face roll against the attributes u
 
 
 @scenario: Face to face roll during BS attack
-  Given that 'Fusilier Angus' declares 'BS Attack' with 'BS' 12 against 'Alguacil Ortega' with 'BS' 11
-  And that 'Alguacil Ortega' declares 'BS Attack' as his ARO
+  Given that 'Fusilier Angus' declared 'BS Attack' with 'BS' 12 against 'Alguacil Ortega' with 'BS' 11
+  And that 'Alguacil Ortega' declared 'BS Attack' as his ARO
   When 'Fusilier Angus' rolls 4 and 'Alguacil Ortega' rolls 7
-  Then 'Fusilier Angus' should not succeed
-  And 'Alguacil Ortega' should succeed and win the Face to Face roll
+  Then 'Fusilier Angus' will not succeed
+  And 'Alguacil Ortega' will succeed and win the Face to Face roll

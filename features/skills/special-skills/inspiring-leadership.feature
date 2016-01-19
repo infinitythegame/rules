@@ -28,6 +28,6 @@ Feature: Inspiring Leadership
 
 @order-count
 Scenario: Lieutenant has the skill Inspiring Leadership
-  Given that my Lieutenant is 'William Wallace'
+  Given that my Lieutenant was 'William Wallace'
   When I count Orders for my Order Pools
   Then all my Troopers count as having Regular Training
